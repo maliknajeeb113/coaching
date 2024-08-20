@@ -3,9 +3,12 @@ import './App.css'
 function App() {
 
   return (
-    <>
-      Mai hu Jiyaan
-    </>
+    <div className='flex h-screen justify-center items-center'>
+     <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
+      
+    </div>
   )
 }
 
