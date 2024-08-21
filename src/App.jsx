@@ -1,13 +1,11 @@
 import './App.css'
+import { Contact } from './Components/Contact'
 
 function App() {
 
   return (
     <div className='flex h-screen justify-center items-center'>
-     <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-      
+      <Contact/>
     </div>
   )
 }

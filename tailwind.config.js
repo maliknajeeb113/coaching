@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        satoshiVariable: ['"Satoshi Variable"', "sans-serif"],
+        // Add more custom font families as needed
+      },
+    },
   },
   plugins: [],
 }
