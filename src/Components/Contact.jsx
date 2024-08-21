@@ -2,9 +2,9 @@ import React from "react";
 
 export const Contact = () => {
   return (
-    <div className="flex px-8 font-satoshiVaria text-[#1F2426]">
+    <div className="flex gap-10 px-8 text-[#1F2426]">
       <div>
-        <div className="flex gap-4 mb-8 uppercase">
+        <div className="flex flex-wrap gap-4 mb-8 uppercase">
           <div className="">05</div>
           <div className="">-----</div>
           <div className="">Contact</div>
@@ -22,40 +22,34 @@ export const Contact = () => {
           </div>
         </div>
       </div>
-      <div id="w-node-bec057cd-d64d-9b42-7b41-2c7bd6e67e0f-b67e14b3">
-        <p className="paragraph-large margin-bottom-80">
+      <div className="">
+        <p className="text-[26px] leading-10 mb-[80px] font-extralight">
           Need assistance more about our services? Simply fill out our contact
           form below and our team will be in touch soon!
         </p>
-        <div className="contact-form-block w-form">
+        <div className="mb-[30px]">
           <form
             id="email-form"
             name="email-form"
-            data-name="Email Form"
-            method="get"
-            data-wf-page-id="659e8ba042c43623b67e14b3"
-            data-wf-element-id="9862a4a7-38b4-7440-7d90-f5e020170ff5"
-            aria-label="Email Form"
+            className=""
           >
-            <div className="form-fields-grid">
-              <div id="w-node-_9862a4a7-38b4-7440-7d90-f5e020170ff7-b67e14b3">
+            <div className="grid grid-cols-2 grid-rows-[auto_auto_auto] x mb-[50px] gap-[50px]">
+              <div className="col-span-1">
                 <input
-                  className="text-field w-input"
-                  maxlength="256"
+                  className="py-2 w-[100%] border-solid border border-transparent border-b-[#333333] text-[#000000] placeholder-[#000000] focus:outline-none bg-transparent min-h-[54px] text-[18px] leading-[30px] font-thin"
+                  maxLength="256"
                   name="Name"
-                  data-name="Name"
                   placeholder="What is your name *"
                   type="text"
                   id="Name"
                   required=""
                 />
               </div>
-              <div id="w-node-_9862a4a7-38b4-7440-7d90-f5e020170ff9-b67e14b3">
+              <div className="col-span-1">
                 <input
-                  className="text-field w-input"
-                  maxlength="256"
+                  className="py-2 w-[100%] border-solid border border-transparent border-b-[#333333] text-[#000000] placeholder-[#000000] focus:outline-none bg-transparent min-h-[54px] text-[18px] leading-[30px] font-thin"
+                  maxLength="256"
                   name="Email"
-                  data-name="Email"
                   placeholder="You email address *"
                   type="text"
                   id="Email"
@@ -63,14 +57,12 @@ export const Contact = () => {
                 />
               </div>
               <div
-                id="w-node-_9bab9189-225b-92e6-e5fc-440c8e320161-b67e14b3"
-                className="select-field-wrapper"
+                className="col-span-2"
               >
                 <select
                   id="field-2"
                   name="field-2"
-                  data-name="Field 2"
-                  className="select-field w-select"
+                  className="py-2 w-[100%] border-solid border border-transparent border-b-[#333333] text-[#000000] placeholder-[#000000] focus:outline-none bg-transparent min-h-[54px] text-[18px] leading-[30px] font-thin"
                 >
                   <option value="">Select one...</option>
                   <option value="First">First choice</option>
@@ -78,15 +70,14 @@ export const Contact = () => {
                   <option value="Third">Third choice</option>
                 </select>
               </div>
-              <div id="w-node-_9862a4a7-38b4-7440-7d90-f5e020170ffb-b67e14b3">
+              <div className="col-span-2">
                 <textarea
                   placeholder="Tell us about your project *"
-                  maxlength="5000"
+                  maxLength="5000"
                   id="field"
                   name="field"
                   required=""
-                  data-name="Field"
-                  className="textarea w-input"
+                  className="py-5 w-[100%] border-solid border border-transparent border-b-[#333333] text-[#000000] placeholder-[#000000] focus:outline-none bg-transparent min-h-[150px] text-[18px] leading-[30px] font-thin"
                 ></textarea>
               </div>
             </div>
@@ -94,13 +85,13 @@ export const Contact = () => {
               <input
                 type="submit"
                 data-wait="Please wait..."
-                className="button-basic w-button"
+                className="border border-[#333333] bg-transparent text-[#000000] tracking-[.03rem] uppercase rounded-[10px] px-[20px] pt-[12px] pb-[11px] text-[14px] font-medium leading-[26px] no-underline transition-all duration-200 ease-[cubic-bezier(.645,.045,.355,1)] relative overflow-hidde"
                 value="Submit"
               />
             </div>
           </form>
           <div
-            className="success-message w-form-done"
+            className="font-extralight mb-5"
             tabindex="-1"
             role="region"
             aria-label="Email Form success"
@@ -108,7 +99,7 @@ export const Contact = () => {
             <div>Thank you! Your submission has been received!</div>
           </div>
           <div
-            className="error-message w-form-fail"
+            className="font-extralight"
             tabindex="-1"
             role="region"
             aria-label="Email Form failure"
