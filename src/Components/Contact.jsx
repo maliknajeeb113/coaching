@@ -2,14 +2,14 @@ import React from "react";
 
 export const Contact = () => {
   return (
-    <div className="flex gap-10 px-8 text-[#1F2426]">
-      <div>
-        <div className="flex flex-wrap gap-4 mb-8 uppercase">
+    <div className="flex flex-wrap lg:flex-nowrap gap-10 px-5 xs:px-8 text-[#1F2426] h-[90vh]">
+      <div className="pr-20">
+        <div className="flex gap-4 text-[14px] md:text-[15px] mb-[30px] uppercase">
           <div className="">05</div>
-          <div className="">-----</div>
+          <div className=""><hr className="w-10 h-[1px] bg-gray-100 border-0 rounded my-3 dark:bg-gray-700"/></div>
           <div className="">Contact</div>
         </div>
-        <h2 className="leading-[50px] mb-[40px] text-[40px]">
+        <h2 className="leading-[50px] mb-[40px] text-[34px] md:text-[40px]">
           How can we help you about your project?
         </h2>
         <div className="flex flex-col gap-4 max-w-48 text-lg leading-[30px] font-thin">
@@ -23,7 +23,7 @@ export const Contact = () => {
         </div>
       </div>
       <div className="">
-        <p className="text-[26px] leading-10 mb-[80px] font-extralight">
+        <p className="text-[26px] leading-10 mb-[30px] lg:mb-[80px] font-extralight">
           Need assistance more about our services? Simply fill out our contact
           form below and our team will be in touch soon!
         </p>
@@ -34,7 +34,7 @@ export const Contact = () => {
             className=""
           >
             <div className="grid grid-cols-2 grid-rows-[auto_auto_auto] x mb-[50px] gap-[50px]">
-              <div className="col-span-1">
+              <div className="col-span-2 md:col-span-1">
                 <input
                   className="py-2 w-[100%] border-solid border border-transparent border-b-[#333333] text-[#000000] placeholder-[#000000] focus:outline-none bg-transparent min-h-[54px] text-[18px] leading-[30px] font-thin"
                   maxLength="256"
@@ -45,7 +45,7 @@ export const Contact = () => {
                   required=""
                 />
               </div>
-              <div className="col-span-1">
+              <div className="col-span-2 md:col-span-1">
                 <input
                   className="py-2 w-[100%] border-solid border border-transparent border-b-[#333333] text-[#000000] placeholder-[#000000] focus:outline-none bg-transparent min-h-[54px] text-[18px] leading-[30px] font-thin"
                   maxLength="256"
