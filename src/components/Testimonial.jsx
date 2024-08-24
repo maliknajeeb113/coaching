@@ -34,11 +34,11 @@ const Testimonial = () => {
             <div className="flex h-12 w-12 justify-center items-center">
               <img src={snow} alt="Snowflake Icon" className="object-contain" />
             </div>
-            <h1 className="text-4xl italic text-center">"{value.quote}"</h1>
+            <h1 className="text-2xl md:text-4xl italic text-center">"{value.quote}"</h1>
             
             <div className="flex gap-1 flex-col items-center justify-center">
-              <h2 className="text-xl">{value.name}</h2>
-              <h3 className="text-lg text-gray-400">{value.kaam}</h3>
+              <h2 className="text-lg md:text-xl">{value.name}</h2>
+              <h3 className="md:text-lg text-gray-400">{value.kaam}</h3>
             </div>
 
           </div>
