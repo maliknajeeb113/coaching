@@ -14,7 +14,7 @@ export const Contact = () => {
   const onSubmit = (formData) => {
     setIsSubmitted(true);
     try {
-      window.location.href = `mailto:${formData.email}?subject=${formData.select}&body=Hi, my name is ${formData.name}. ${formData.message}`;
+      window.location.href = `mailto:${formData.email}?subject=Query related to Sanjeev Edupoint&body=Hi, my name is ${formData.name} (${formData.phone}). ${formData.message}`;
       setIsSuccess(true);
     }
     catch(err) {
@@ -32,11 +32,11 @@ export const Contact = () => {
           <li>Contact</li>
         </ul>
         <h2 className="leading-[50px] mb-[40px] text-[34px] md:text-[40px]">
-          How can we help you about your project?
+          How can we support you in your studies?
         </h2>
         <div className="flex flex-col gap-4 max-w-48 text-lg leading-[30px] font-thin">
           <div>
-            Moonshine St. 14/05 Chelsea, London, UK
+            243/b New Plots Puran nagar, Jammu, J&K
           </div>
           <div>
             <a href="mailto:#">info@email.com</a>
@@ -46,11 +46,11 @@ export const Contact = () => {
       </div>
       <div className="">
         <p className="text-[26px] leading-10 mb-[30px] lg:mb-[80px] font-extralight">
-          Need assistance more about our services? Simply fill out our contact
+          Need more information about our classes? Simply fill out our contact
           form below and our team will be in touch soon!
         </p>
         <div className="mb-[30px]">
-        {isSubmitted == false && <form
+        {!isSubmitted && <form
             id="email-form"
             name="email-form"
             className=""
@@ -73,33 +73,31 @@ export const Contact = () => {
                 <input
                   className="py-2 w-[100%] border-solid border border-transparent border-b-[#333333] text-[#000000] placeholder-[#000000] focus:outline-none bg-transparent min-h-[54px] text-[18px] leading-[30px] font-thin"
                   maxLength="256"
+                  name="Phone"
+                  placeholder="Your mobile number *"
+                  type="text"
+                  id="Phone"
+                  required
+                  {...register("phone")}
+                />
+              </div>
+              <div
+                className="col-span-2"
+              >
+                <input
+                  className="py-2 w-[100%] border-solid border border-transparent border-b-[#333333] text-[#000000] placeholder-[#000000] focus:outline-none bg-transparent min-h-[54px] text-[18px] leading-[30px] font-thin"
+                  maxLength="256"
                   name="Email"
-                  placeholder="You email address *"
+                  placeholder="Your email address *"
                   type="text"
                   id="Email"
                   required
                   {...register("email")}
                 />
               </div>
-              <div
-                className="col-span-2"
-              >
-                <select
-                  id="field-2"
-                  name="field-2"
-                  {...register("select")}
-                  required
-                  className="py-2 w-[100%] border-solid border border-transparent border-b-[#333333] text-[#000000] placeholder-[#000000] focus:outline-none bg-transparent min-h-[54px] text-[18px] leading-[30px] font-thin"
-                >
-                  <option value="">Select one...</option>
-                  <option value="First">First choice</option>
-                  <option value="Second">Second choice</option>
-                  <option value="Third">Third choice</option>
-                </select>
-              </div>
               <div className="col-span-2">
                 <textarea
-                  placeholder="Tell us about your project *"
+                  placeholder="Write your message *"
                   maxLength="5000"
                   id="message"
                   name="Message"
@@ -118,13 +116,13 @@ export const Contact = () => {
               />
             </div>
           </form>}
-          {isSubmitted == true && isSuccess == true && <div
+          {isSubmitted && isSuccess && <div
             className="font-extralight mb-5"
             aria-label="Email Form success"
           >
             <div>Thank you! Your submission has been received!</div>
           </div>}
-          {isSubmitted == true && isSuccess == false && <div
+          {isSubmitted && !isSuccess && <div
             className="font-extralight"
             aria-label="Email Form failure"
           >
