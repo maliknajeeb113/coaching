@@ -1,4 +1,5 @@
 import './App.css'
+import { Contact } from './components/Contact'
 import Testimonial from './components/Testimonial'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       Hello world!
     </h1>
     <Testimonial/>
+    <Contact/>
       
     </div>
   )
