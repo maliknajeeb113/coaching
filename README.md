@@ -13,8 +13,8 @@
 # Project ka structure
     -Public
     -src
-     |- Pages
-     |- Components
+     |- pages
+     |- components
 
 
 # Router aur sab baad me setup karenge - path hota rahega
