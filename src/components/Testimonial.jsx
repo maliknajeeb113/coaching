@@ -20,7 +20,7 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="relative overflow-hidden w-full py-4 h-screen">
+    <div className="relative overflow-hidden w-full py-8">
       <div
         className="flex transition-transform ease-out duration-1000"
         style={{ transform: `translateX(-${curr * 100}vw)` }} 
