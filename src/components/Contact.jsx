@@ -59,7 +59,7 @@ export const Contact = () => {
             <div className="grid grid-cols-2 grid-rows-[auto_auto_auto] x mb-[50px] gap-[50px]">
               <div className="col-span-2 md:col-span-1">
                 <input
-                  className="py-2 w-[100%] border-solid border border-transparent border-b-[#333333] text-[#000000] placeholder-[#000000] focus:outline-none bg-transparent min-h-[54px] text-[18px] leading-[30px] font-thin"
+                  className="py-2 w-[100%] border-solid border border-transparent border-b-[#333333] text-black placeholder-black focus:outline-none bg-transparent min-h-[54px] text-[18px] leading-[30px] font-thin"
                   maxLength="256"
                   name="Name"
                   placeholder="What is your name *"
@@ -71,7 +71,7 @@ export const Contact = () => {
               </div>
               <div className="col-span-2 md:col-span-1">
                 <input
-                  className="py-2 w-[100%] border-solid border border-transparent border-b-[#333333] text-[#000000] placeholder-[#000000] focus:outline-none bg-transparent min-h-[54px] text-[18px] leading-[30px] font-thin"
+                  className="py-2 w-[100%] border-solid border border-transparent border-b-[#333333] text-black placeholder-black focus:outline-none bg-transparent min-h-[54px] text-[18px] leading-[30px] font-thin"
                   maxLength="256"
                   name="Phone"
                   placeholder="Your mobile number *"
@@ -85,7 +85,7 @@ export const Contact = () => {
                 className="col-span-2"
               >
                 <input
-                  className="py-2 w-[100%] border-solid border border-transparent border-b-[#333333] text-[#000000] placeholder-[#000000] focus:outline-none bg-transparent min-h-[54px] text-[18px] leading-[30px] font-thin"
+                  className="py-2 w-[100%] border-solid border border-transparent border-b-[#333333] text-black placeholder-black focus:outline-none bg-transparent min-h-[54px] text-[18px] leading-[30px] font-thin"
                   maxLength="256"
                   name="Email"
                   placeholder="Your email address *"
@@ -102,7 +102,7 @@ export const Contact = () => {
                   id="message"
                   name="Message"
                   required
-                  className="py-5 w-[100%] border-solid border border-transparent border-b-[#333333] text-[#000000] placeholder-[#000000] focus:outline-none bg-transparent min-h-[150px] text-[18px] leading-[30px] font-thin"
+                  className="py-5 w-[100%] border-solid border border-transparent border-b-[#333333] text-black placeholder-black focus:outline-none bg-transparent min-h-[150px] text-[18px] leading-[30px] font-thin"
                   {...register("message")}
                 ></textarea>
               </div>
@@ -111,7 +111,7 @@ export const Contact = () => {
               <input
                 type="submit"
                 data-wait="Please wait..."
-                className="border border-[#333333] bg-transparent text-[#000000] tracking-[.03rem] uppercase rounded-[10px] px-[20px] pt-[12px] pb-[11px] text-[14px] font-medium leading-[26px] hover:cursor-pointer transform active:scale-75 transition-transform"
+                className="border border-[#333333] bg-transparent text-black tracking-[.03rem] uppercase rounded-[10px] px-[20px] pt-[12px] pb-[11px] text-[14px] font-medium leading-[26px] hover:cursor-pointer transform active:scale-75 transition-transform"
                 value="Submit"
               />
             </div>
@@ -133,3 +133,5 @@ export const Contact = () => {
     </div>
   );
 };
+
+export default Contact;
