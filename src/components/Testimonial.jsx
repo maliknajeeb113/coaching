@@ -55,7 +55,7 @@ const Testimonial = () => {
             key={index}
             className={`
               transition-all w-2 h-2 bg-black rounded-full cursor-pointer
-              ${curr === index ? "p-1" : "bg-opacity-50"}
+              ${curr === index ? "p-[5px]" : "bg-opacity-50"}
             `}
             onClick={() => handleDotClick(index)}
           ></div>
