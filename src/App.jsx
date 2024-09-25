@@ -4,9 +4,8 @@ import Notes from './pages/Notes';
 import Body from './pages/Body';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
 import { createBrowserRouter,Outlet,Link } from "react-router-dom";
-import { useState } from 'react'
+
 
 function App() {
 
