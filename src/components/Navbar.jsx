@@ -59,13 +59,13 @@ const NavBar = () => {
       </div>
 
       <ul
-        className={`lg:flex gap-[30px] lg:rounded-[30px] mx-[20px] xs:mx-[30px] lg:mx-0 p-[20px_30px] lg:p-[8px_13px] fixed lg:top-[33px] w-[calc(100%-40px)] xs:w-[calc(100%-60px)] lg:w-auto left-0 lg:left-1/2 bg-[#1f2426] lg:bg-[#1f2426e6] backdrop-blur-[10px] text-white lg:transform lg:translate-x-[-50%] z-10 transition-all duration-500 ease-in-out ${
+        className={`lg:flex gap-[30px] lg:rounded-[30px] mx-[20px] xs:mx-[30px] lg:mx-0 p-[20px_30px] lg:p-[8px_13px] fixed lg:top-[33px] w-[calc(100%-40px)] xs:w-[calc(100%-60px)] lg:w-auto left-0 lg:left-1/2 bg-[#1f2426] backdrop-blur-[10px] text-white lg:transform lg:translate-x-[-50%] z-10 transition-all duration-500 ease-in-out ${
           isOpen ? "top-20" : "top-[-490px]"
         }
         ${
           isScrolled
             ? "lg:bg-opacity-70 lg:bg-[#1f2426b3] lg:backdrop-blur-lg lg:translate-y-[-10px]" // Translucent and move up on scroll
-            : "lg:bg-opacity-100 lg:translate-y-0"
+            : "lg:bg-opacity-100 lg:bg-[#1f2426e6] lg:translate-y-0"
         }
         `}
       >
