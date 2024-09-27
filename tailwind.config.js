@@ -9,6 +9,10 @@ export default {
       screens: {
         'xs': '480px',
       },
+      fontFamily: {
+        satoshi: ["Satoshi", "sans-serif"],
+      },
+      
     },
   },
   plugins: [],
