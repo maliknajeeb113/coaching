@@ -13,20 +13,19 @@ import { createBrowserRouter,Outlet,Link } from "react-router-dom";
 function App() {
 
   return (
-    <div className="flex flex-col justify-center items-center gap-y-32">
+    <div className="flex flex-col justify-center gap-y-32">
       <Navbar />
       <Outlet />
       <Element name="testimonials">
         <section id="testimonials">
-          <Testimonial />
+          <Testimonial/>
         </section>
       </Element>
       <Element name="contact">
         <section id="contact">
-          <Contact />
+          <Contact/>
         </section>
       </Element>
-
       <Footer />
     </div>
   );
@@ -39,8 +38,8 @@ export const appRouter = createBrowserRouter([
     errorElement: <Error/>,
     children: [
       {
-      path: "/",
-      element: <Body/>
+        path: "/",
+        element: <Body/>
       },
       {
         path: "/notes",
@@ -48,7 +47,6 @@ export const appRouter = createBrowserRouter([
       }
     ]
   }
-
 ])
 
 export default App

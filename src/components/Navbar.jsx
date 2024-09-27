@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import DragHandleRoundedIcon from "@mui/icons-material/DragHandleRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
@@ -14,6 +14,22 @@ const NavBar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [activePage, setActivePage] = useState("home");
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleOnClick = (id) => {
     setIsOpen(!isOpen);
@@ -23,7 +39,7 @@ const NavBar = () => {
 
   return (
     <div>
-      <div className="fixed left-0 px-[20px] xs:px-[30px] w-full h-20 flex justify-between items-center bg-white backdrop-blur-[10px] z-20 lg:top-[-490px]">
+      <div className={`fixed left-0 px-[20px] xs:px-[30px] w-full h-20 flex justify-between items-center bg-white backdrop-blur-[10px] z-20 lg:top-[-490px]`}>
         <div>
           <span>Coaching</span>
         </div>
@@ -43,9 +59,15 @@ const NavBar = () => {
       </div>
 
       <ul
-        className={`lg:flex gap-[30px] lg:rounded-[30px] mx-[20px] xs:mx-[30px] lg:mx-0 p-[20px_30px] lg:p-[8px_13px] fixed lg:top-[33px] w-[calc(100%-40px)] xs:w-[calc(100%-60px)] lg:w-auto left-0 lg:left-1/2 bg-[#1f2426] lg:bg-[#1f2426e6] backdrop-blur-[10px] text-white lg:transform lg:translate-x-[-50%] z-10 transition-all duration-500 ease-in lg:transition-none ${
+        className={`lg:flex gap-[30px] lg:rounded-[30px] mx-[20px] xs:mx-[30px] lg:mx-0 p-[20px_30px] lg:p-[8px_13px] fixed lg:top-[33px] w-[calc(100%-40px)] xs:w-[calc(100%-60px)] lg:w-auto left-0 lg:left-1/2 bg-[#1f2426] lg:bg-[#1f2426e6] backdrop-blur-[10px] text-white lg:transform lg:translate-x-[-50%] z-10 transition-all duration-500 ease-in-out ${
           isOpen ? "top-20" : "top-[-490px]"
-        }`}
+        }
+        ${
+          isScrolled
+            ? "lg:bg-opacity-70 lg:bg-[#1f2426b3] lg:backdrop-blur-lg lg:translate-y-[-10px]" // Translucent and move up on scroll
+            : "lg:bg-opacity-100 lg:translate-y-0"
+        }
+        `}
       >
         {navItems.map((navItem) => (
           <li
