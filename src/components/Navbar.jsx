@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
 import DragHandleRoundedIcon from "@mui/icons-material/DragHandleRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import logo from "../assets/images/logo.svg";
 
 const NavBar = () => {
   let navItems = [
@@ -15,6 +16,8 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activePage, setActivePage] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
+  
+  const navRef = useRef(null); // Ref for the entire navbar
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,23 +28,34 @@ const NavBar = () => {
       }
     };
 
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("mousedown", handleClickOutside); 
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   const handleOnClick = (id) => {
-    setIsOpen(!isOpen);
+    setIsOpen(false);
     setActivePage(id);
-    console.log(activePage);
   };
 
   return (
-    <div>
-      <div className={`fixed left-0 px-[20px] xs:px-[30px] w-full h-20 flex justify-between items-center bg-white backdrop-blur-[10px] z-20 lg:top-[-490px]`}>
-        <div>
-          <span>Coaching</span>
+    <div ref={navRef}>
+      <div className={`fixed left-0 px-[20px] xs:px-[30px] w-full h-20 flex justify-between items-center bg-white bg-opacity-70 backdrop-blur-md z-20 lg:top-[-490px]`}>
+        <div className="flex items-center">
+          <img src={logo} className="h-6" />
+          <span className="font-satoshi font-medium px-2 text-xl">
+            Sanjeev Edupoint
+          </span>
         </div>
         <div onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? (
@@ -64,7 +78,7 @@ const NavBar = () => {
         }
         ${
           isScrolled
-            ? "lg:bg-opacity-70 lg:bg-[#1f2426b3] lg:backdrop-blur-lg lg:translate-y-[-10px]" // Translucent and move up on scroll
+            ? "lg:bg-opacity-70 lg:bg-[#1f2426b3] lg:backdrop-blur-lg lg:translate-y-[-15px]" // Translucent and move up on scroll
             : "lg:bg-opacity-100 lg:bg-[#1f2426e6] lg:translate-y-0"
         }
         `}
@@ -86,7 +100,7 @@ const NavBar = () => {
               onClick={() => handleOnClick(navItem.id)}
               name={navItem.id}
             >
-              {navItem.id == "home" ? (
+              {navItem.id === "home" ? (
                 <>
                   <span className="hidden lg:block">
                     <HomeRoundedIcon />
