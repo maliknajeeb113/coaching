@@ -29,7 +29,6 @@ const Testimonial = () => {
           <div
             key={index}
             className="flex flex-col justify-center items-center gap-6 w-full h-full flex-shrink-0 px-8"
-            style={{ width: "100vw" }}
           >
             <div className="flex h-12 w-12 justify-center items-center">
               <img src={snow} alt="Snowflake Icon" className="object-contain" />
