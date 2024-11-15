@@ -7,7 +7,6 @@ export const Contact = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm()
 
@@ -24,7 +23,7 @@ export const Contact = () => {
   };
 
   return (
-    <div className="flex flex-wrap lg:flex-nowrap gap-10 px-5 xs:px-8 text-[#1F2426] h-[90vh]">
+    <div className="flex flex-wrap lg:flex-nowrap gap-10 px-5 xs:px-8 text-[#1F2426]">
       <div className="pr-20">
         <ul className="flex gap-4 text-[14px] md:text-[15px] mb-[30px] uppercase">
           <li>05</li>

@@ -73,7 +73,7 @@ const NavBar = () => {
       </div>
 
       <ul
-        className={`lg:flex gap-[30px] lg:rounded-[30px] mx-[20px] xs:mx-[30px] lg:mx-0 p-[20px_30px] lg:p-[8px_13px] fixed lg:top-[33px] w-[calc(100%-40px)] xs:w-[calc(100%-60px)] lg:w-auto left-0 lg:left-1/2 bg-[#1f2426] backdrop-blur-[10px] text-white lg:transform lg:translate-x-[-50%] z-10 transition-all duration-500 ease-in-out ${
+        className={`lg:flex gap-[30px] lg:rounded-[30px] mx-[20px] xs:mx-[30px] lg:mx-0 p-[20px] lg:p-[8px_13px] fixed lg:top-[33px] rounded-b-lg w-[calc(100%-40px)] xs:w-[calc(100%-60px)] lg:w-auto left-0 lg:left-1/2 bg-[#1f2426] backdrop-blur-[10px] text-white lg:transform lg:translate-x-[-50%] z-10 transition-all duration-500 ease-in-out ${
           isOpen ? "top-20" : "top-[-490px]"
         }
         ${
@@ -86,8 +86,8 @@ const NavBar = () => {
         {navItems.map((navItem) => (
           <li
             key={navItem.id}
-            className={`tracking-[.03em] leading-[30px] uppercase rounded-[40px] py-[5px] lg:py-0 lg:px-[10px] text-[13px] font-normal no-underline lg:hover:bg-white lg:hover:text-black hover:cursor-pointer duration-200 flex relative ${
-              activePage === navItem.id ? "lg:bg-white lg:text-black" : ""
+            className={`tracking-[.03em] leading-[30px] uppercase rounded-sm lg:rounded-[40px] py-[5px] lg:py-0 px-[15px] lg:px-[10px] text-[13px] font-normal no-underline lg:hover:bg-white lg:hover:text-black hover:cursor-pointer duration-200 flex relative ${
+              activePage === navItem.id ? "bg-white text-black" : ""
             }`}
           >
             <Link
