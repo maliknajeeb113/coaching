@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export const Contact = () => {
@@ -6,8 +6,7 @@ export const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const {
     register,
-    handleSubmit,
-    formState: { errors },
+    handleSubmit
   } = useForm()
 
   const onSubmit = (formData) => {
