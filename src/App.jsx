@@ -13,12 +13,8 @@ function App() {
     <div className="flex flex-col justify-center gap-y-32">
       <Navbar />
       <Outlet />
-      <section id="testimonials">
-        <Testimonial />
-      </section>
-      <section id="contact">
-        <Contact />
-      </section>
+      <Testimonial />
+      <Contact />
       <Footer />
     </div>
   );
@@ -32,11 +28,7 @@ export const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: (
-          <section id="home">
-            <Body />
-          </section>
-        ),
+        element: <Body />
       },
       {
         path: "/notes",

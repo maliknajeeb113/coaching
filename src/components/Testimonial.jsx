@@ -20,47 +20,49 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="relative overflow-hidden w-full py-8">
-      <div
-        className="flex transition-transform ease-out duration-1000"
-        style={{ transform: `translateX(-${curr * 100}vw)` }}
-      >
-        {testimonialData.map((value, index) => (
-          <div
-            key={index}
-            className="flex flex-col justify-center items-center gap-6 w-full h-full flex-shrink-0 px-8"
-          >
-            <div className="flex h-12 w-12 justify-center items-center">
-              <img src={snow} alt="Snowflake Icon" className="object-contain" />
-            </div>
-            <h1 className="text-2xl md:text-4xl italic text-center">
-              "{value.quote}"
-            </h1>
+    <section id="testimonials">
+      <div className="relative overflow-hidden w-full py-8">
+        <div
+          className="flex transition-transform ease-out duration-1000"
+          style={{ transform: `translateX(-${curr * 100}vw)` }}
+        >
+          {testimonialData.map((value, index) => (
+            <div
+              key={index}
+              className="flex flex-col justify-center items-center gap-6 w-full h-full flex-shrink-0 px-8"
+            >
+              <div className="flex h-12 w-12 justify-center items-center">
+                <img src={snow} alt="Snowflake Icon" className="object-contain" />
+              </div>
+              <h1 className="text-2xl md:text-4xl italic text-center">
+                "{value.quote}"
+              </h1>
 
-            <div className="flex gap-1 flex-col items-center justify-center">
-              <h2 className="text-lg md:text-xl">{value.name}</h2>
-              <h3 className="text-lg md:text-xl font-thin text-gray-400">
-                {value.kaam}
-              </h3>
+              <div className="flex gap-1 flex-col items-center justify-center">
+                <h2 className="text-lg md:text-xl">{value.name}</h2>
+                <h3 className="text-lg md:text-xl font-thin text-gray-400">
+                  {value.kaam}
+                </h3>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      {/* Indicator Dots */}
-      <div className="flex items-center justify-center gap-2 pt-6">
-        {testimonialData.map((value, index) => (
-          <div
-            key={index}
-            className={`
-              transition-all w-2 h-2 bg-black rounded-full cursor-pointer
-              ${curr === index ? "p-[5px]" : "bg-opacity-50"}
-            `}
-            onClick={() => handleDotClick(index)}
-          ></div>
-        ))}
+        {/* Indicator Dots */}
+        <div className="flex items-center justify-center gap-2 pt-6">
+          {testimonialData.map((value, index) => (
+            <div
+              key={index}
+              className={`
+                transition-all w-2 h-2 bg-black rounded-full cursor-pointer
+                ${curr === index ? "p-[5px]" : "bg-opacity-50"}
+              `}
+              onClick={() => handleDotClick(index)}
+            ></div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

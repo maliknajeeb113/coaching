@@ -1,9 +1,9 @@
-const Body = () =>{
+const Body = () => {
+  return (
+    <section id="home">
+        <div className="flex w-full h-screen bg-gray-600">Body here</div>;
+    </section>
+  )
+};
 
-
-    return(<div className="flex w-full h-screen bg-gray-600">
-        Body here
-    </div>)
-}
-
-export default Body
+export default Body;
