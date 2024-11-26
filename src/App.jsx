@@ -13,6 +13,7 @@ function App() {
     <div className="flex flex-col justify-center gap-y-32">
       <Navbar />
       <Outlet />
+      <Notes />
       <Testimonial />
       <Contact />
       <Footer />
