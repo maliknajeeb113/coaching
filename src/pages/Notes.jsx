@@ -24,7 +24,12 @@ const Notes = () => {
     const fetchFile = async () => {
       const result = await client.fetch(CLASS_QUERY);
       if (result.length > 0) {
-        setClasses(result);
+        const sortedResult = result.sort((a, b) => {
+          const numA = parseInt(a.name, 10);
+          const numB = parseInt(b.name, 10);
+          return numA - numB;
+        });
+        setClasses(sortedResult);
       }
     };
 
@@ -54,45 +59,75 @@ const Notes = () => {
 
   return (
     <section id="notes">
-      <div className="flex flex-col items-center space-y-4">
-        <div className="relative w-full px-4">
-          {/* Scroll Buttons */}
+      <div className="flex flex-col items-center space-y-4 px-8 lg:px-16 py-8">
+        {/* Heading */}
+        <div>
+          <ul className="flex gap-4 text-[14px] md:text-[15px] mb-[15px] md:mb-[30px] uppercase">
+            <li>02</li>
+            <li>
+              <hr className="w-10 h-[1px] bg-gray-100 border-0 rounded my-3 dark:bg-gray-700" />
+            </li>
+            <li>Notes</li>
+          </ul>
+        </div>
+        <div className="flex items-center gap-2 w-full">
+          {/* Left Scroll Button */}
           <button
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full z-10 shadow-md"
+            className="text-gray-800 p-2 sm:p-3 text-xs sm:text-base rounded-full z-10 shadow-md"
             onClick={() => scroll("left")}
           >
             ◀
           </button>
-          <button
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full z-10 shadow-md"
-            onClick={() => scroll("right")}
-          >
-            ▶
-          </button>
-
-          {/* Card Container */}
+          {/* Class Card */}
           <div
             ref={containerRef}
-            className="flex space-x-4 overflow-x-auto scroll-smooth scrollbar-hide"
+            className="flex h-56 space-x-4 overflow-x-auto scroll-smooth scrollbar-hide"
             style={{ scrollSnapType: "x mandatory" }}
           >
-            {/* Cards */}
             {classes.map((cls, index) => (
               <div
                 key={index}
-                className={`flex flex-col justify-center items-center lg-gap-12 ${classes.length > 1 ? 'w-[50%]' : 'w-full'} h-full flex-shrink-0`}
+                className={`flex flex-col justify-center items-center lg-gap-12 ${
+                  classes.length === 1
+                    ? "w-full"
+                    : classes.length === 2
+                    ? "w-[50%]"
+                    : "w-full xs:w-[50%] md:w-[33.33%]"
+                } h-full flex-shrink-0`}
                 style={{ scrollSnapAlign: "start" }}
               >
                 <div
                   onClick={() => handleClassSelect(cls.name)}
                   id={cls.name}
-                  className="flex cursor-pointer flex-col justify-center items-center w-auto min-w-36 min-h-32 lg:min-w-[400px] lg:h-[250px] lg:mx-[20%] flex-shrink-0 px-8 bg-gray-200 font-medium shadow rounded-lg"
+                  className="relative w-52 h-36 sm:w-60 sm:h-40 lg:w-[315px] lg:h-48 lg:mx-[20%] bg-[#1f2426] cursor-pointer rounded-xl backdrop-blur-md bg-opacity-70"
                 >
-                  Class: {cls.name}
+                  <div className="absolute top-4 left-4 flex space-x-2 text-sm sm:text-md">
+                    <p>
+                      Total Notes: {cls.notes?.length ? cls.notes?.length : 0}
+                    </p>
+                  </div>
+                  <div className="absolute inset-0 flex flex-col items-start justify-end p-6 text-white">
+                    <h2 className="text-md sm:text-lg lg:text-xl font-light opacity-90">
+                      Class
+                    </h2>
+                    <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">
+                      {cls.name}
+                    </h1>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Right Scroll Button */}
+          <button
+            className="text-gray-800 p-2 sm:p-3 text-xs sm:text-base rounded-full z-10 shadow-md"
+            onClick={() => scroll("right")}
+          >
+            ▶
+          </button>
+
+          {/* Notes Pop-up */}
           {isOpen && (
             <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
               <div className="relative bg-white rounded-lg shadow-lg w-full max-w-md md:max-w-lg lg:max-w-2xl p-6 text-center mx-4">

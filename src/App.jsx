@@ -10,7 +10,7 @@ import { createBrowserRouter, Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div className="flex flex-col justify-center gap-y-32">
+    <div className="flex flex-col justify-center gap-y-14 lg:gap-y-28">
       <Navbar />
       <Outlet />
       <Notes />
