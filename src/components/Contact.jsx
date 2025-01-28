@@ -23,7 +23,7 @@ export const Contact = () => {
 
   return (
     <section id="contact">
-      <div className="flex flex-wrap lg:flex-nowrap gap-10 py-8 px-8 lg:px-16 text-[#1F2426]">
+      <div className="flex flex-wrap lg:flex-nowrap gap-10 text-[#1F2426]">
         <div className="pr-20">
           <ul className="flex gap-4 text-[14px] md:text-[15px] mb-[30px] uppercase">
             <li>04</li>

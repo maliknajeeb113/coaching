@@ -6,7 +6,7 @@ const Body = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="flex flex-col relative text-center justify-center m-auto items-center px-8 lg:px-16 py-6"
+        className="flex flex-col relative text-center justify-center m-auto items-center"
       >
         <motion.div
           initial={{ x: -200, opacity: 0 }}

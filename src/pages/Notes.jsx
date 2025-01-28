@@ -59,7 +59,7 @@ const Notes = () => {
 
   return (
     <section id="notes">
-      <div className="flex flex-col items-center space-y-4 px-8 lg:px-16 py-8">
+      <div className="flex flex-col items-center">
         {/* Heading */}
         <div>
           <ul className="flex gap-4 text-[14px] md:text-[15px] mb-[15px] md:mb-[30px] uppercase">

@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
-import DragHandleRoundedIcon from "@mui/icons-material/DragHandleRounded";
-import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import logo from "../assets/images/logo.svg";
 import { Sling as Hamburger } from 'hamburger-react'
@@ -51,7 +49,7 @@ const NavBar = () => {
 
   return (
     <div ref={navRef}>
-      <div className={`fixed left-0 px-[20px] xs:px-[30px] w-full h-20 flex justify-between items-center bg-white bg-opacity-70 backdrop-blur-md z-20 lg:top-[-490px]`}>
+      <div className={`fixed left-0 px-[20px] xs:px-[30px] w-full h-20 flex justify-between items-center bg-white bg-opacity-70 backdrop-blur-md lg:top-[-490px] z-50`}>
         <div className="flex items-center">
           <img src={logo} className="h-6" />
           <span className="font-satoshi font-medium px-2 text-xl">
