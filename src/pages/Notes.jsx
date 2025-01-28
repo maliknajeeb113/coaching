@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { client } from "../client";
+import { client } from "../utils/client";
 import { FaDownload, FaTimes } from "react-icons/fa";
 
 const CLASS_QUERY = `*[_type == "class"]{
@@ -78,10 +78,11 @@ const Notes = () => {
           >
             ◀
           </button>
+
           {/* Class Card */}
           <div
             ref={containerRef}
-            className="flex h-56 space-x-4 overflow-x-auto scroll-smooth scrollbar-hide"
+            className="flex h-56 space-x-4 overflow-x-auto scroll-smooth no-scrollbar"
             style={{ scrollSnapType: "x mandatory" }}
           >
             {classes.map((cls, index) => (
@@ -99,14 +100,14 @@ const Notes = () => {
                 <div
                   onClick={() => handleClassSelect(cls.name)}
                   id={cls.name}
-                  className="relative w-52 h-36 sm:w-60 sm:h-40 lg:w-[315px] lg:h-48 lg:mx-[20%] bg-[#1f2426] cursor-pointer rounded-xl backdrop-blur-md bg-opacity-70"
+                  className="relative w-52 h-36 sm:w-60 sm:h-40 lg:w-[280px] xl:w-[315px] lg:h-48 lg:mx-[20%] border-[#1f2426] border-2 cursor-pointer rounded-xl"
                 >
                   <div className="absolute top-4 left-4 flex space-x-2 text-sm sm:text-md">
                     <p>
                       Total Notes: {cls.notes?.length ? cls.notes?.length : 0}
                     </p>
                   </div>
-                  <div className="absolute inset-0 flex flex-col items-start justify-end p-6 text-white">
+                  <div className="absolute inset-0 flex flex-col items-start justify-end p-6 ">
                     <h2 className="text-md sm:text-lg lg:text-xl font-light opacity-90">
                       Class
                     </h2>

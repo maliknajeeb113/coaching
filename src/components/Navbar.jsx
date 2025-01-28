@@ -4,6 +4,7 @@ import DragHandleRoundedIcon from "@mui/icons-material/DragHandleRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import logo from "../assets/images/logo.svg";
+import { Sling as Hamburger } from 'hamburger-react'
 
 const NavBar = () => {
   let navItems = [
@@ -57,7 +58,13 @@ const NavBar = () => {
             Sanjeev Edupoint
           </span>
         </div>
-        <div onClick={() => setIsOpen(!isOpen)}>
+
+        <div className="text-white bg-black rounded-full p-1">
+        <Hamburger toggled={isOpen} toggle={setIsOpen} size={20}/>
+        </div>
+        
+        {/* <div onClick={() => setIsOpen(!isOpen)}>
+        
           {isOpen ? (
             <CloseRoundedIcon
               className="bg-[#1f2426] text-white text-4xl p-1 rounded-[50%] hidden"
@@ -69,11 +76,12 @@ const NavBar = () => {
               fontSize=""
             />
           )}
-        </div>
+        </div> */}
+        
       </div>
 
       <ul
-        className={`lg:flex gap-[30px] lg:rounded-[30px] mx-[20px] xs:mx-[30px] lg:mx-0 p-[20px] lg:p-[8px_13px] fixed lg:top-[33px] rounded-b-lg w-[calc(100%-40px)] xs:w-[calc(100%-60px)] lg:w-auto left-0 lg:left-1/2 bg-[#1f2426] backdrop-blur-[10px] text-white lg:transform lg:translate-x-[-50%] z-10 transition-all duration-500 ease-in-out ${
+        className={`lg:flex gap-10 lg:rounded-[30px] mx-[20px] xs:mx-[30px] lg:mx-0 p-[20px] lg:p-[8px_13px] fixed lg:top-[33px] rounded-b-lg w-[calc(100%-40px)] xs:w-[calc(100%-60px)] lg:w-auto left-0 lg:left-1/2 bg-[#1f2426] backdrop-blur-[10px] text-white lg:transform lg:translate-x-[-50%] z-10 transition-all duration-500 ease-in-out ${
           isOpen ? "top-20" : "top-[-490px]"
         }
         ${
