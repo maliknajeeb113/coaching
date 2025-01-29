@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 const Body = () => {
   return (
-    <section id="home">
+    <section id="home" className="px-8 mt-20 lg:mt-28 lg:px-20">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

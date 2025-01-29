@@ -58,7 +58,7 @@ const Notes = () => {
   };
 
   return (
-    <section id="notes">
+    <section id="notes" className="px-8 mt-20 lg:mt-28 lg:px-20">
       <div className="flex flex-col items-center">
         {/* Heading */}
         <div>

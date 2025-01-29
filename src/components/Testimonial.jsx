@@ -20,7 +20,7 @@ const Testimonial = () => {
   };
 
   return (
-    <section id="testimonials">
+    <section id="testimonials" className="mt-20 lg:mt-28">
         {/* Heading */}
         <div className="flex justify-center">
           <ul className="flex gap-4 text-[14px] md:text-[15px] mb-[15px] md:mb-[30px] uppercase">
