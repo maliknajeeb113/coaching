@@ -10,9 +10,10 @@ import { createBrowserRouter, Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div className="flex flex-col justify-center gap-y-32">
+    <div className="flex flex-col justify-center">
       <Navbar />
-      <Outlet />
+      <Body />
+      <Notes />
       <Testimonial />
       <Contact />
       <Footer />
@@ -30,10 +31,10 @@ export const appRouter = createBrowserRouter([
         path: "/",
         element: <Body />
       },
-      {
-        path: "/notes",
-        element: <Notes />,
-      },
+      // {
+      //   path: "/notes",
+      //   element: <Notes />,
+      // },
     ],
   },
 ]);

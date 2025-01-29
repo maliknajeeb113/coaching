@@ -22,11 +22,11 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact">
-      <div className="flex flex-wrap lg:flex-nowrap gap-10 px-8 lg:px-16 text-[#1F2426]">
+    <section id="contact" className="px-8 mt-20 lg:mt-28 lg:px-20">
+      <div className="flex flex-wrap lg:flex-nowrap gap-10 text-[#1F2426]">
         <div className="pr-20">
           <ul className="flex gap-4 text-[14px] md:text-[15px] mb-[30px] uppercase">
-            <li>05</li>
+            <li>04</li>
             <li><hr className="w-10 h-[1px] bg-gray-100 border-0 rounded my-3 dark:bg-gray-700"/></li>
             <li>Contact</li>
           </ul>

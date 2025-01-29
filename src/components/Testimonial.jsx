@@ -20,7 +20,17 @@ const Testimonial = () => {
   };
 
   return (
-    <section id="testimonials">
+    <section id="testimonials" className="mt-20 lg:mt-28">
+        {/* Heading */}
+        <div className="flex justify-center">
+          <ul className="flex gap-4 text-[14px] md:text-[15px] mb-[15px] md:mb-[30px] uppercase">
+            <li>03</li>
+            <li>
+              <hr className="w-10 h-[1px] bg-gray-100 border-0 rounded my-3 dark:bg-gray-700" />
+            </li>
+            <li>Testimonials</li>
+          </ul>
+        </div>
       <div className="relative overflow-hidden w-full py-8">
         <div
           className="flex transition-transform ease-out duration-1000"
