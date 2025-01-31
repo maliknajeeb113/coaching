@@ -90,34 +90,37 @@ const NavBar = () => {
         `}
       >
         {navItems.map((navItem) => (
-          <li
-            key={navItem.id}
-            className={`tracking-[.03em] leading-[30px] uppercase rounded-sm lg:rounded-[40px] py-[5px] lg:py-0 px-[15px] lg:px-[10px] text-[13px] font-normal no-underline lg:hover:bg-white lg:hover:text-black hover:cursor-pointer duration-200 flex relative ${
-              activePage === navItem.id ? "bg-white text-black" : ""
-            }`}
-          >
-            <Link
-              to={navItem.id}
-              smooth
-              spy
-              offset={-100}
-              duration={500}
-              onSetActive={(id) => setActivePage(id)}
-              onClick={() => handleOnClick(navItem.id)}
-              name={navItem.id}
-            >
-              {navItem.id === "home" ? (
-                <>
-                  <span className="hidden lg:block">
-                    <HomeRoundedIcon />
-                  </span>
-                  <span className="lg:hidden">{navItem.name}</span>
-                </>
-              ) : (
-                navItem.name
-              )}
-            </Link>
-          </li>
+          <Link
+          to={navItem.id}
+          key={navItem.id}
+          smooth
+          spy
+          offset={-100}
+          duration={500}
+          onSetActive={(id) => setActivePage(id)}
+          onClick={() => handleOnClick(navItem.id)}
+          name={navItem.id}
+          className={`tracking-[.03em] leading-[30px] uppercase rounded-sm lg:rounded-[40px] py-[5px] lg:py-0 px-[15px] lg:px-[10px] text-[13px] font-normal no-underline lg:hover:bg-white lg:hover:text-black hover:cursor-pointer duration-200 flex relative ${
+            activePage === navItem.id ? "bg-white text-black" : ""
+          }`}
+        >
+          {navItem.id === "home" ? (
+            <>
+              <span className="hidden lg:block">
+                <HomeRoundedIcon />
+              </span>
+              <span className="lg:hidden">{navItem.name}</span>
+            </>
+          ) : (
+            navItem.name
+          )}
+        </Link>
+          // <li
+          //   
+            
+          // >
+            
+          // </li>
         ))}
       </ul>
     </div>
