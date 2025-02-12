@@ -12,7 +12,7 @@ const Testimonial = () => {
     }, 3000); // Slide interval in milliseconds
 
     return () => clearInterval(autoSlide);
-  }, []);
+  }, [length]);
 
   // Function to handle dot click
   const handleDotClick = (index) => {
@@ -20,26 +20,29 @@ const Testimonial = () => {
   };
 
   return (
-    <section id="testimonials" className="mt-20 lg:mt-28">
-        {/* Heading */}
-        <div className="flex justify-center">
-          <ul className="flex gap-4 text-[14px] md:text-[15px] mb-[15px] md:mb-[30px] uppercase">
-            <li>03</li>
-            <li>
-              <hr className="w-10 h-[1px] bg-gray-100 border-0 rounded my-3 dark:bg-gray-700" />
-            </li>
-            <li>Testimonials</li>
-          </ul>
-        </div>
+    <section id="testimonials" className="mt-20 lg:mt-28" aria-labelledby="testimonials-heading">
+      {/* Heading */}
+      <div className="flex justify-center">
+        <ul className="flex gap-4 text-[14px] md:text-[15px] mb-[15px] md:mb-[30px] uppercase">
+          <li>03</li>
+          <li>
+            <hr className="w-10 h-[1px] bg-gray-100 border-0 rounded my-3 dark:bg-gray-700" />
+          </li>
+          <li>Testimonials</li>
+        </ul>
+      </div>
+
       <div className="relative overflow-hidden w-full py-8">
         <div
           className="flex transition-transform ease-out duration-1000"
           style={{ transform: `translateX(-${curr * 100}vw)` }}
+          aria-live="polite"
         >
           {testimonialData.map((value, index) => (
             <div
               key={index}
               className="flex flex-col justify-center items-center gap-6 w-full h-full flex-shrink-0 px-8"
+              aria-hidden={curr !== index}
             >
               <div className="flex h-12 w-12 justify-center items-center">
                 <img src={snow} alt="Snowflake Icon" className="object-contain" />
@@ -61,14 +64,15 @@ const Testimonial = () => {
         {/* Indicator Dots */}
         <div className="flex items-center justify-center gap-2 pt-6">
           {testimonialData.map((value, index) => (
-            <div
+            <button
               key={index}
+              aria-label={`Go to testimonial ${index + 1}`}
               className={`
                 transition-all w-2 h-2 bg-black rounded-full cursor-pointer
                 ${curr === index ? "p-[5px]" : "bg-opacity-50"}
               `}
               onClick={() => handleDotClick(index)}
-            ></div>
+            ></button>
           ))}
         </div>
       </div>
