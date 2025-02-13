@@ -3,7 +3,6 @@ import { Link } from "react-scroll";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import logo from "../assets/images/logo.svg";
 import { Sling as Hamburger } from "hamburger-react";
-import { Sling as Hamburger } from 'hamburger-react';
 
 const navItems = [
   { name: "Home", id: "home" },
@@ -17,18 +16,6 @@ const NavBar = () => {
   const [activePage, setActivePage] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
   
-  const navRef = useRef(null); // Ref for the entire navbar
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
   const navRef = useRef(null); // Ref for the dropdown menu
 
   // Optimized scroll & click event handlers
@@ -53,15 +40,11 @@ const NavBar = () => {
   }, [handleScroll, handleClickOutside]);
 
   return (
-    <nav ref={navRef} aria-label="Main Navigation" className="relative">
-      <div className="fixed left-0 px-[20px] xs:px-[30px] w-full h-20 flex justify-between items-center bg-white bg-opacity-70 backdrop-blur-md lg:top-[-490px] z-50">
     <div>
       {/* Navbar */}
       <div className="fixed left-0 px-[20px] xs:px-[30px] w-full h-20 flex justify-between items-center bg-white bg-opacity-70 backdrop-blur-md lg:top-[-490px] z-50">
         {/* Logo */}
         <div className="flex items-center">
-          <img src={logo} alt="Sanjeev Edupoint Logo" className="h-6" />
-          <span className="font-satoshi font-medium px-2 text-xl">Sanjeev Edupoint</span>
           <img src={logo} className="h-6" alt="Sanjeev Edupoint Logo" />
           <span className="font-satoshi font-medium px-2 text-xl">Sanjeev Edupoint</span>
         </div>
@@ -70,14 +53,6 @@ const NavBar = () => {
         <div className="text-white bg-black rounded-full p-1">
           <Hamburger toggled={isOpen} toggle={setIsOpen} size={20} />
         </div>
-
-        <button
-          aria-label="Toggle Navigation Menu"
-          className="text-white bg-black rounded-full p-1"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <Hamburger toggled={isOpen} toggle={setIsOpen} size={20} />
-        </button>
       </div>
 
       {/* Navigation Menu */}
@@ -101,10 +76,6 @@ const NavBar = () => {
               spy
               offset={-100}
               duration={500}
-              onSetActive={(id) => setActivePage(id)}
-              onClick={() => handleOnClick(navItem.id)}
-              name={navItem.id}
-              aria-label={`Navigate to ${navItem.name}`}
               onSetActive={setActivePage}
               onClick={() => setIsOpen(false)}
               className={`tracking-[.03em] leading-[30px] uppercase rounded-sm lg:rounded-[40px] py-[5px] lg:py-0 px-[15px] lg:px-[10px] text-[13px] font-normal no-underline lg:hover:bg-white lg:hover:text-black hover:cursor-pointer duration-200 flex relative ${
@@ -125,7 +96,7 @@ const NavBar = () => {
           );
         })}
       </ul>
-    </nav>
+    </div>
   );
 };
 
