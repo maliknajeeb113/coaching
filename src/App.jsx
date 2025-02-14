@@ -1,7 +1,7 @@
 import "./App.css";
 import Error from "./pages/Error";
-import Notes from "./pages/Notes";
-import Body from "./pages/Body";
+import Notes from "./components/Notes";
+import Body from "./components/Body";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
@@ -12,10 +12,7 @@ function App() {
   return (
     <div className="flex flex-col justify-center">
       <Navbar />
-      <Body />
-      <Notes />
-      <Testimonial />
-      <Contact />
+      <Outlet />
       <Footer />
     </div>
   );
@@ -29,7 +26,14 @@ export const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />
+        element: (
+          <>
+            <Body />
+            <Notes />
+            <Testimonial />
+            <Contact />
+          </>
+        ),
       },
       // {
       //   path: "/notes",

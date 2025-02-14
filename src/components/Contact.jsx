@@ -34,13 +34,9 @@ export const Contact = () => {
             How can we support you in your studies?
           </h2>
           <div className="flex flex-col gap-4 max-w-48 text-lg leading-[30px] font-thin">
-            <div>
-              243/b New Plots Puran nagar, Jammu, J&K
-            </div>
-            <div>
-              <a href="mailto:#">info@email.com</a>
-              <div>00 (123) 456 78 90</div>
-            </div>
+              <p>243/B, New Plots, Puran Nagar, Jammu, J&K</p>
+              <p><a href="mailto:#" aria-label="Send an email to info@email.com">info@email.com</a></p>
+              <p aria-label="Phone number">00 (123) 456 78 90</p>
           </div>
         </div>
         <div className="">
@@ -54,9 +50,11 @@ export const Contact = () => {
               name="email-form"
               className=""
               onSubmit={handleSubmit(onSubmit)}
+              aria-labelledby="contact-form"
             >
-              <div className="grid grid-cols-2 grid-rows-[auto_auto_auto] x mb-[50px] gap-[50px]">
+              <div className="grid grid-cols-2 grid-rows-[auto_auto_auto] mb-[50px] gap-[50px]">
                 <div className="col-span-2 md:col-span-1">
+                  <label htmlFor="Name" className="sr-only">Your name</label>
                   <input
                     className="py-2 w-[100%] border-solid border border-transparent border-b-[#333333] text-black placeholder-black focus:outline-none bg-transparent min-h-[54px] text-[18px] leading-[30px] font-thin"
                     maxLength="256"
@@ -66,9 +64,11 @@ export const Contact = () => {
                     id="Name"
                     required
                     {...register("name")}
+                    aria-labelledby="Name"
                   />
                 </div>
                 <div className="col-span-2 md:col-span-1">
+                  <label htmlFor="Phone" className="sr-only">Your phone number</label>
                   <input
                     className="py-2 w-[100%] border-solid border border-transparent border-b-[#333333] text-black placeholder-black focus:outline-none bg-transparent min-h-[54px] text-[18px] leading-[30px] font-thin"
                     maxLength="256"
@@ -78,11 +78,11 @@ export const Contact = () => {
                     id="Phone"
                     required
                     {...register("phone")}
+                    aria-labelledby="Phone"
                   />
                 </div>
-                <div
-                  className="col-span-2"
-                >
+                <div className="col-span-2">
+                  <label htmlFor="Email" className="sr-only">Your email address</label>
                   <input
                     className="py-2 w-[100%] border-solid border border-transparent border-b-[#333333] text-black placeholder-black focus:outline-none bg-transparent min-h-[54px] text-[18px] leading-[30px] font-thin"
                     maxLength="256"
@@ -92,9 +92,11 @@ export const Contact = () => {
                     id="Email"
                     required
                     {...register("email")}
+                    aria-labelledby="Email"
                   />
                 </div>
                 <div className="col-span-2">
+                  <label htmlFor="message" className="sr-only">Your message</label>
                   <textarea
                     placeholder="Write your message *"
                     maxLength="5000"
@@ -103,6 +105,7 @@ export const Contact = () => {
                     required
                     className="py-5 w-[100%] border-solid border border-transparent border-b-[#333333] text-black placeholder-black focus:outline-none bg-transparent min-h-[150px] text-[18px] leading-[30px] font-thin"
                     {...register("message")}
+                    aria-labelledby="Message"
                   ></textarea>
                 </div>
               </div>
@@ -112,6 +115,7 @@ export const Contact = () => {
                   data-wait="Please wait..."
                   className="border border-[#333333] bg-transparent text-black tracking-[.03rem] uppercase rounded-[10px] px-[20px] pt-[12px] pb-[11px] text-[14px] font-medium leading-[26px] hover:cursor-pointer transform active:scale-75 transition-transform"
                   value="Submit"
+                  aria-label="Submit your inquiry"
                 />
               </div>
             </form>}
@@ -119,13 +123,13 @@ export const Contact = () => {
               className="font-extralight mb-5"
               aria-label="Email Form success"
             >
-              <div>Thank you! Your submission has been received!</div>
+              <p>Thank you! Your submission has been received!</p>
             </div>}
             {isSubmitted && !isSuccess && <div
               className="font-extralight"
               aria-label="Email Form failure"
             >
-              <div>Oops! Something went wrong while submitting the form.</div>
+              <p>Oops! Something went wrong while submitting the form.</p>
             </div>}
           </div>
         </div>
