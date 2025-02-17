@@ -10,7 +10,7 @@ import { createBrowserRouter, Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center font-satoshi">
       <Navbar />
       <Outlet />
       <Footer />
