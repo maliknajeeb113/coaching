@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import testimonialData from "../utils/testimonialData";
-import snow from "../assets/snowflake.svg";
+import snow from "/assets/images/snowflake.svg";
 
 const Testimonial = () => {
   const [curr, setCurr] = useState(0);

@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: "Satoshi";
-    src: url("./src/assets/fonts/Satoshi-Variable.ttf") format('truetype');
+    src: url("/assets/fonts/Satoshi-Variable.ttf") format('truetype');
   }
 
   @layer utilities {

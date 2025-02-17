@@ -1,5 +1,5 @@
 import Marquee from "react-fast-marquee";
-import logo from "../assets/images/logo.svg";
+import logo from "/assets/images/logo.svg";
 
 const Footer = () => {
   return (

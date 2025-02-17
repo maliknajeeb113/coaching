@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Header from "../assets/images/Header.jpg"
+import Header from "/assets/images/Header.jpg"
 const Body = () => {
   return (
     <section id="home" className="px-8 mt-20 lg:mt-28 lg:px-20">

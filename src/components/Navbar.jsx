@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-scroll";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
-import logo from "../assets/images/logo.svg";
+import logo from "/assets/images/logo.svg";
 import { Sling as Hamburger } from "hamburger-react";
 
 const navItems = [
