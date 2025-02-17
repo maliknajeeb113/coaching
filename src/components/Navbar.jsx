@@ -15,7 +15,7 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activePage, setActivePage] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
-  
+
   const navRef = useRef(null); // Ref for the dropdown menu
 
   // Optimized scroll & click event handlers
@@ -32,7 +32,7 @@ const NavBar = () => {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("mousedown", handleClickOutside);
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("mousedown", handleClickOutside);
@@ -40,13 +40,15 @@ const NavBar = () => {
   }, [handleScroll, handleClickOutside]);
 
   return (
-    <div>
+    <div ref={navRef}>
       {/* Navbar */}
       <div className="fixed left-0 px-[20px] xs:px-[30px] w-full h-20 flex justify-between items-center bg-white bg-opacity-70 backdrop-blur-md lg:top-[-490px] z-50">
         {/* Logo */}
         <div className="flex items-center">
           <img src={logo} className="h-6" alt="Sanjeev Edupoint Logo" />
-          <span className="font-satoshi font-medium px-2 text-xl">Sanjeev Edupoint</span>
+          <span className="font-satoshi font-medium px-2 text-xl">
+            Sanjeev Edupoint
+          </span>
         </div>
 
         {/* Hamburger Menu */}
@@ -57,7 +59,6 @@ const NavBar = () => {
 
       {/* Navigation Menu */}
       <ul
-        ref={navRef}
         className={`lg:flex gap-10 lg:rounded-[30px] mx-[20px] xs:mx-[30px] lg:mx-0 p-[20px] lg:p-[8px_13px] fixed lg:top-[33px] rounded-b-lg w-[calc(100%-40px)] xs:w-[calc(100%-60px)] lg:w-auto left-0 lg:left-1/2 bg-[#1f2426] backdrop-blur-[10px] text-white lg:transform lg:translate-x-[-50%] z-10 transition-all duration-500 ease-in-out ${
           isOpen ? "top-20" : "top-[-490px]"
         } ${
